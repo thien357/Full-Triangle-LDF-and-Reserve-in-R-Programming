@@ -48,6 +48,10 @@ with(Claims, {
 name.list <- c("One", "Two", "Three")
 mtext(str_interp("Incremental and cumulative claims development ${name.list[3]}"), side = 3, outer = TRUE, line = -3, cex = 1.1, font = 2)
 par(op)
+##########################################################################################################################
+
+xyplot(cum.paid ~ dev | originf, data = Claims, t = "b", layout = c(4, 2), as.table=TRUE, 
+       main = "Cumulative claims development")
 ############################################################################################################################
 # Chain-Ladder Algorithm
 f <- sapply((n-1):1, function(i){
